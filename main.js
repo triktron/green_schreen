@@ -63,7 +63,7 @@ var frame;
         data[j + 3] = 0;
       }*/
 	  
-	  if (data[j] >= 200 && data[j + 1] <= 170 && data[j + 2] <= 170) {
+	  if (data[j] >= 160 && data[j + 1] <= 140 && data[j + 2] <= 140) {
 		  data[j + 3] = 0;
 	  }
     }
