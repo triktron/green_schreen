@@ -1,4 +1,5 @@
 var frame;
+var of;
 
 (function (doc, nav) {
   "use strict";
@@ -63,7 +64,11 @@ var frame;
         data[j + 3] = 0;
       }*/
 	  
-	  if (data[j] >= 110 && data[j + 1] >= 110 && data[j + 2] >= 110) {
+	  /*if (data[j] >= 110 && data[j + 1] >= 110 && data[j + 2] >= 110) {
+		  data[j + 3] = 0;
+	  }*/
+	  
+	  if (data[j] <= of[j][0]+2 && data[j] >= of[j][0]-2 && data[j + 1] <= of[j + 1][1]+2 && data[j + 1] >= of[j + 2][1]-2 && data[j] <= of[j + 2][2]+2 && data[j] >= of[i + 2][2]-2) {
 		  data[j + 3] = 0;
 	  }
     }
@@ -116,4 +121,25 @@ var y=event.clientY - 8;
 var j = (x*y)*4;
  document.getElementById("log").innerHTML = "X coords: " + x + ", Y coords: " + y + ":" + j;
  document.title = frame.data[j] +"," + frame.data[j + 1] + "," + frame.data[j + 2];
+}
+
+function reedit(data) {
+	var len = data.length;
+	of = Create2DArray(len/4);
+
+    for (var i = 0, j = 0; j < len; i++, j += 4) {
+		of[i][0] = data[j]
+		of[i][1] = data[j + 1]
+		of[i][2] = data[j + 2]
+    }
+}
+
+function Create2DArray(rows) {
+  var arr = [];
+
+  for (var i=0;i<rows;i++) {
+     arr[i] = [];
+  }
+
+  return arr;
 }
