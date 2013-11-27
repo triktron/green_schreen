@@ -55,11 +55,11 @@ var frame;
 
     for (var i = 0, j = 0; j < len; i++, j += 4) {
       // Convert from RGB to HSL...
-      var hsl = rgb2hsl(data[j], data[j + 1], data[j + 2]);
+      /*var hsl = rgb2hsl(data[j], data[j + 1], data[j + 2]);
       var h = hsl[0], s = hsl[1], l = hsl[2];
 
       // ... and check if we have a somewhat green pixel.
-      /*if (h >= 90 && h <= 160 && s >= 25 && s <= 90 && l >= 20 && l <= 75) {
+      if (h >= 90 && h <= 160 && s >= 25 && s <= 90 && l >= 20 && l <= 75) {
         data[j + 3] = 0;
       }*/
 	  
