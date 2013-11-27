@@ -113,6 +113,7 @@ function show_coords(event)
 {
 var x=event.clientX - 8;
 var y=event.clientY - 8;
- document.getElementById("log").innerHTML = "X coords: " + x + ", Y coords: " + y;
- document.title = frame.data[0] +"," + frame.data[1] + "," + frame.data[2];
+var j = (x*y)*4;
+ document.getElementById("log").innerHTML = "X coords: " + x + ", Y coords: " + y + ":" + j;
+ document.title = frame.data[j] +"," + frame.data[j + 1] + "," + frame.data[j + 2];
 }
