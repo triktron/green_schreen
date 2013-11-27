@@ -114,5 +114,5 @@ function show_coords(event)
 var x=event.clientX;
 var y=event.clientY;
  document.getElementById("log").innerHTML = "X coords: " + x + ", Y coords: " + y;
- document.title = frame.data[1] +"," + frame.data[2] + "," + frame.data[3];
+ document.title = frame.data[0] +"," + frame.data[1] + "," + frame.data[2];
 }
