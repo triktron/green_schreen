@@ -40,16 +40,7 @@ var of;
     requestAnimationFrame(draw);
   }
 
-  function readFrame() {
-    try {
-      context.drawImage(video, 0, 0, width, height);
-    } catch (e) {
-      // The video may not be ready, yet.
-      return null;
-    }
-
-    return context.getImageData(0, 0, width, height);
-  }
+  
 
   function replaceGreen(data) {
     var len = data.length;
@@ -143,3 +134,14 @@ function Create2DArray(rows) {
 
   return arr;
 }
+
+function readFrame() {
+    try {
+      context.drawImage(video, 0, 0, width, height);
+    } catch (e) {
+      // The video may not be ready, yet.
+      return null;
+    }
+
+    return context.getImageData(0, 0, width, height);
+  }
