@@ -1,7 +1,9 @@
+var frame;
+
 (function (doc, nav) {
   "use strict";
 
-  var video, width, height, context, frame;
+  var video, width, height, context;
 
   function initialize() {
     // The source video.
