@@ -1,7 +1,7 @@
 (function (doc, nav) {
   "use strict";
 
-  var video, width, height, context;
+  var video, width, height, context, frame;
 
   function initialize() {
     // The source video.
@@ -26,7 +26,7 @@
   }
 
   function draw() {
-    var frame = readFrame();
+    frame = readFrame();
 
     if (frame) {
       replaceGreen(frame.data);
@@ -112,4 +112,5 @@ function show_coords(event)
 var x=event.clientX;
 var y=event.clientY;
  document.getElementById("log").innerHTML = "X coords: " + x + ", Y coords: " + y;
+ document.title = frame.data[1] +"," + frame.data[2] + "," + frame.data[3];
 }
